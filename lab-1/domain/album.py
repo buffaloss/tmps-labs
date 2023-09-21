@@ -1,4 +1,4 @@
-from media_item import MediaItem
+from domain.media_item import MediaItem
 
 
 class Album(MediaItem):
@@ -9,7 +9,7 @@ class Album(MediaItem):
         self.no_songs = no_songs
 
     def play(self):
-        print(f"Playing the album: {self.title} with {self.artist}")
+        print(f"Playing the album: {self.title} by {self.artist}")
 
     def display_info(self):
         print(f"Album: {self.title} by {self.artist}")

@@ -1,7 +1,7 @@
-from character_entity import CharacterEntity
+from domain.performer import Performer
 
 
-class Podcaster(CharacterEntity):
+class Podcaster(Performer):
     def __init__(self, name, debut_date, dob, topic):
         super().__init__(name)
         self.debut_date = debut_date

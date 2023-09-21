@@ -1,10 +1,9 @@
-from character_entity import CharacterEntity
+from domain.user_entity import UserEntity
 
 
-class User(CharacterEntity):
+class User(UserEntity):
     def __init__(self, name, dob):
-        super().__init__(name)
-        self.dob = dob
+        super().__init__(name, dob)
         self.playlists = []
 
     def introduce(self):

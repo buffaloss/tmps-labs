@@ -1,4 +1,4 @@
-from media_item import MediaItem
+from domain.media_item import MediaItem
 
 
 class Podcast(MediaItem):

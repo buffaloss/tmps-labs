@@ -1,4 +1,4 @@
-from content_manager import ContentManager
+from domain.content_manager import ContentManager
 
 
 class IndividualPlaylistManager(ContentManager):

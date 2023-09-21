@@ -1,4 +1,4 @@
-from artist import Artist
+from domain.artist import Artist
 
 
 class Band(Artist):
