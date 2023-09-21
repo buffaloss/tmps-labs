@@ -40,7 +40,7 @@
 ## Respecting SOLID principles 
 &ensp; &ensp; Let's evaluate how each SOLID principle is implemented in the project:
 
-__1. Single Responsibility Principle (SRP):__
+&ensp; &ensp; __1. Single Responsibility Principle (SRP):__
 
 &ensp; &ensp; Each class (*Album, Playlist, Podcast*, etc) within the domain module has a single responsibility related to its type of entity or functionality, ensuring a clear separation of concerns. For example, looking at the *Song* class, it is obvious that its only role is to store and display information about a song, with no unnecessary methods.
 
@@ -63,7 +63,7 @@ class Song(MediaItem):
 
 &ensp; &ensp; Additionally, I can mention that the *MediaItem* class defines a common interface for all media items but doesn't implement specific functionality.
 
-__2. Open-Closed Principle (OCP):__
+&ensp; &ensp; __2. Open-Closed Principle (OCP):__
 
 &ensp; &ensp; The project is open for extension but closed for modification. New media item types, character entities, or content managers can be added without altering existing classes. 
 
@@ -87,7 +87,7 @@ class MediaItem(ABC):
         pass
 ```
 
-__3. Liskov Substitution Principle (LSP):__
+&ensp; &ensp; __3. Liskov Substitution Principle (LSP):__
 
 &ensp; &ensp; Derived classes (e.g., *Album, Podcaster, PlaylistManager*) can be used interchangeably with their base classes (e.g., *MediaItem, CharacterEntity, ContentManager*) without impacting program correctness.
 
@@ -101,8 +101,8 @@ __3. Liskov Substitution Principle (LSP):__
     album = Album("Issues", date(2020, 1, 1), "The Neighborhood", "Rock", 12)
     demonstrate_lsp(album)
 ```
-__4. Interface Segregation Principle (ISP):__
-
+&ensp; &ensp; __4. Interface Segregation Principle (ISP):__
+ 
 &ensp; &ensp; The project defines focused interfaces (e.g., *MediaItem, CharacterEntity, ContentManager*) with only methods relevant to their responsibilities. Implementing classes adhere to these interfaces, ensuring they provide specific functionality without unnecessary dependencies.
 
 &ensp; &ensp; The Interface Segregation Principle (ISP) is demonstrated in my code through the creation of minimal and focused interfaces (abstract base classes) with only the methods relevant to specific responsibilities. Here's an example:
@@ -128,7 +128,7 @@ class ContentManager(ABC):
 
 &ensp; &ensp; By creating focused interfaces, the ISP is demonstrated because each class adheres to an interface with only the methods relevant to its role, ensuring that implementing classes do not have unnecessary dependencies on methods they don't need.
 
-__5. Dependency Inversion Principle (DIP):__
+&ensp; &ensp; __5. Dependency Inversion Principle (DIP):__
 
 &ensp; &ensp; The project adheres to DIP by depending on abstractions (e.g., interfaces) rather than concrete implementations. High-level modules (e.g., *main.py*) depend on these abstractions, promoting flexibility, reducing coupling, and enabling easier substitution of implementations.
 
