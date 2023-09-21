@@ -9,6 +9,7 @@ from domain.user import User
 from domain.podcaster import Podcaster
 from domain.playlist_manager import PlaylistManager
 from domain.album_manager import AlbumManager
+from domain.media_item import MediaItem 
 
 
 def main():
@@ -71,6 +72,16 @@ def main():
     # Demonstrate LSP with different MediaItem types
     demonstrate_lsp(album)
 
+
+    # Demonstrate the dependency inversion principle
+    def play_media(media_item: MediaItem):
+        media_item.play()
+    # Create instances and demonstrate DIP
+    album = Album("Album 1", date(2020, 1, 1), "Artist 1", "Rock", 12)
+    podcast = Podcast("Podcast 1", date(2020, 1, 1), 30, "Podcaster 1")
+    # Demonstrate DIP by passing different MediaItem types to the function
+    play_media(album)
+    play_media(podcast)
 
 if __name__ == "__main__":
     main()
