@@ -31,7 +31,7 @@
 
 &ensp; &ensp; __2. domain:__ This directory houses the core domain logic and is structured into several modules/packages, each with specific responsibilities:
 
-- media_items: This module contains the definition of the MediaItem abstract base class, which serves as the foundation for all media item types. It also includes derived classes such as Album, Playlist, Podcast, and Song, each implementing specific media item features.
+- media_items: This module contains the definition of the media_item abstract base class, which serves as the foundation for all media item types. It also includes derived classes such as Album, Playlist, Podcast, and Song, each implementing specific media item features.
 
 - characters: This module defines character-related entities. It contains abstract base class CharacterEntity and derived classes such as Podcaster, User, Artist, SoloArtist, and Band, each representing various characters involved in the Music Library system.
 
@@ -45,7 +45,7 @@
 &ensp; &ensp; Each class (*Album, Playlist, Podcast*, etc) within the domain module has a single responsibility related to its type of entity or functionality, ensuring a clear separation of concerns. For example, looking at the *Song* class, it is obvious that its only role is to store and display information about a song, with no unnecessary methods.
 
 ```
-class Song(MediaItem):
+class Song(media_item):
     def __init__(self, title, creation_date, duration, artist):
         super().__init__(title, creation_date)
         self.duration = duration
@@ -61,19 +61,19 @@ class Song(MediaItem):
 
 ```
 
-&ensp; &ensp; Additionally, I can mention that the *MediaItem* class defines a common interface for all media items but doesn't implement specific functionality.
+&ensp; &ensp; Additionally, I can mention that the *media_item* class defines a common interface for all media items but doesn't implement specific functionality.
 
 &ensp; &ensp; __2. Open-Closed Principle (OCP):__
 
 &ensp; &ensp; The project is open for extension but closed for modification. New media item types, character entities, or content managers can be added without altering existing classes. 
 
-&ensp; &ensp; Take for example the *MediaItem* class. This abstract base class serves as an interface for all media item types. It defines common methods such as play and display_info. The *Album* class, representing a specific media item type, derives from *MediaItem*. It extends the functionality by providing implementations for the abstract methods play and display_info. This is the crucial point for OCP: you can add new media item types (e.g., Movie, Documentary) without modifying the *MediaItem* class or any existing media item classes.
+&ensp; &ensp; Take for example the *media_item* class. This abstract base class serves as an interface for all media item types. It defines common methods such as play and display_info. The *Album* class, representing a specific media item type, derives from *media_item*. It extends the functionality by providing implementations for the abstract methods play and display_info. This is the crucial point for OCP: you can add new media item types (e.g., Movie, Documentary) without modifying the *media_item* class or any existing media item classes.
 
-&ensp; &ensp; I can continue to extend the system with new media item types by creating additional classes that inherit from *MediaItem*. These new classes can introduce their unique behaviors while adhering to the existing interface.
+&ensp; &ensp; I can continue to extend the system with new media item types by creating additional classes that inherit from *media_item*. These new classes can introduce their unique behaviors while adhering to the existing interface.
 
 
 ```
-class MediaItem(ABC):
+class media_item(ABC):
     def __init__(self, title, creation_date):
         self.title = title
         self.creation_date = creation_date
@@ -89,9 +89,9 @@ class MediaItem(ABC):
 
 &ensp; &ensp; __3. Liskov Substitution Principle (LSP):__
 
-&ensp; &ensp; Derived classes (e.g., *Album, Podcaster, PlaylistManager*) can be used interchangeably with their base classes (e.g., *MediaItem, CharacterEntity, ContentManager*) without impacting program correctness.
+&ensp; &ensp; Derived classes (e.g., *Album, Podcaster, PlaylistManager*) can be used interchangeably with their base classes (e.g., *media_item, CharacterEntity, ContentManager*) without impacting program correctness.
 
-&ensp; &ensp; The following code snippet demonstrates the Liskov Substitution Principle (LSP) by creating a function, *demonstrate_lsp*, that takes a *MediaItem* object as a parameter and showcases the interchangeability of derived classes (e.g., *Album*) with their base class (*MediaItem*). The function calls common methods (display_info and play) on the media_item, emphasizing that different *MediaItem* types can be used seamlessly, adhering to the LSP's requirement that derived classes must be substitutable for their base class without affecting program correctness.
+&ensp; &ensp; The following code snippet demonstrates the Liskov Substitution Principle (LSP) by creating a function, *demonstrate_lsp*, that takes a *media_item* object as a parameter and showcases the interchangeability of derived classes (e.g., *Album*) with their base class (*media_item*). The function calls common methods (display_info and play) on the media_item, emphasizing that different *media_item* types can be used seamlessly, adhering to the LSP's requirement that derived classes must be substitutable for their base class without affecting program correctness.
 
 ```
     def demonstrate_lsp(media_item):
@@ -103,7 +103,7 @@ class MediaItem(ABC):
 ```
 &ensp; &ensp; __4. Interface Segregation Principle (ISP):__
  
-&ensp; &ensp; The project defines focused interfaces (e.g., *MediaItem, CharacterEntity, ContentManager*) with only methods relevant to their responsibilities. Implementing classes adhere to these interfaces, ensuring they provide specific functionality without unnecessary dependencies.
+&ensp; &ensp; The project defines focused interfaces (e.g., *media_item, CharacterEntity, ContentManager*) with only methods relevant to their responsibilities. Implementing classes adhere to these interfaces, ensuring they provide specific functionality without unnecessary dependencies.
 
 &ensp; &ensp; The Interface Segregation Principle (ISP) is demonstrated in my code through the creation of minimal and focused interfaces (abstract base classes) with only the methods relevant to specific responsibilities. Here's an example:
 
@@ -132,10 +132,10 @@ class ContentManager(ABC):
 
 &ensp; &ensp; The project adheres to DIP by depending on abstractions (e.g., interfaces) rather than concrete implementations. High-level modules (e.g., *main.py*) depend on these abstractions, promoting flexibility, reducing coupling, and enabling easier substitution of implementations.
 
-&ensp; &ensp; In the following code, the play_media function takes a *MediaItem* object as an argument, adhering to the DIP by depending on the abstraction (*MediaItem*) rather than concrete implementations (*Album, Podcast*). This allows for easy substitution of different media item types without modifying the high-level module.
+&ensp; &ensp; In the following code, the play_media function takes a *media_item* object as an argument, adhering to the DIP by depending on the abstraction (*media_item*) rather than concrete implementations (*Album, Podcast*). This allows for easy substitution of different media item types without modifying the high-level module.
 
 ```
-def play_media(media_item: MediaItem):
+def play_media(media_item: media_item):
         media_item.play()
     
     album = Album("Album 1", date(2020, 1, 1), "Artist 1", "Rock", 12)

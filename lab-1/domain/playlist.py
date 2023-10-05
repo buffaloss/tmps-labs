@@ -1,7 +1,7 @@
-from domain.media_item import MediaItem
+from domain.media_item import media_item
 
 
-class Playlist(MediaItem):
+class Playlist(media_item):
     def __init__(self, title, creation_date, description, user):
         super().__init__(title, creation_date)
         self.description = description

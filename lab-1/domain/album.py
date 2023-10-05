@@ -1,7 +1,7 @@
-from domain.media_item import MediaItem
+from domain.media_item import media_item
 
 
-class Album(MediaItem):
+class Album(media_item):
     def __init__(self, title, creation_date, artist, genre, no_songs):
         super().__init__(title, creation_date)
         self.artist = artist

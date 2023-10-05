@@ -9,7 +9,7 @@ from domain.user import User
 from domain.podcaster import Podcaster
 from domain.playlist_manager import PlaylistManager
 from domain.album_manager import AlbumManager
-from domain.media_item import MediaItem 
+from domain.media_item import media_item
 
 
 def main():
@@ -63,23 +63,23 @@ def main():
     print("\nContents in Album Manager:")
     album_manager.display_contents()
 
-    # Define a function that takes a MediaItem object and demonstrates LISKOV SUBSTITUTION PRINCIPLE
+    # Define a function that takes a media_item object and demonstrates LISKOV SUBSTITUTION PRINCIPLE
     def demonstrate_lsp(media_item):
         media_item.display_info()
         media_item.play()
     # Create instances of Album and demonstrate LSP
     album = Album("Album 1", date(2020, 1, 1), "Artist 1", "Rock", 12)
-    # Demonstrate LSP with different MediaItem types
+    # Demonstrate LSP with different media_item types
     demonstrate_lsp(album)
 
 
     # Demonstrate the dependency inversion principle
-    def play_media(media_item: MediaItem):
+    def play_media(media_item: media_item):
         media_item.play()
     # Create instances and demonstrate DIP
     album = Album("Album 1", date(2020, 1, 1), "Artist 1", "Rock", 12)
     podcast = Podcast("Podcast 1", date(2020, 1, 1), 30, "Podcaster 1")
-    # Demonstrate DIP by passing different MediaItem types to the function
+    # Demonstrate DIP by passing different media_item types to the function
     play_media(album)
     play_media(podcast)
 
