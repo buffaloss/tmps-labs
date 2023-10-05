@@ -8,7 +8,7 @@ class IndividualAlbumManager(override val name: String) : ContentManager {
     var album: Album? = null
     var albumItemsManager: AlbumItemsManager? = null
 
-    fun setAlbum(album: Album) {
+    fun setIndividualAlbum(album: Album) {
         this.album = album
         this.albumItemsManager = AlbumItemsManager(album)
     }

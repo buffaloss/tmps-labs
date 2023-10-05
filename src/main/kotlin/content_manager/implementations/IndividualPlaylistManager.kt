@@ -8,7 +8,7 @@ class IndividualPlaylistManager(override val name: String) : ContentManager {
     var playlist: Playlist? = null
     var playlistItemsManager: PlaylistItemsManager? = null
 
-    fun setPlaylist(playlist: Playlist) {
+    fun setIndividualPlaylist(playlist: Playlist) {
         this.playlist = playlist
         this.playlistItemsManager = PlaylistItemsManager(playlist)
     }

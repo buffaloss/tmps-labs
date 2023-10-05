@@ -1,5 +1,6 @@
 package media_item.implementations
 import media_item.MediaItem
+import singleton.GlobalSearchIndex
 
 class Podcast(
         override val title: String,
@@ -7,6 +8,10 @@ class Podcast(
         val duration: Int,
         val podcaster: String
 ) : MediaItem {
+    init {
+        GlobalSearchIndex.index(this)
+    }
+
     override fun play() {
         println("Playing the podcast: $title with $podcaster")
     }
