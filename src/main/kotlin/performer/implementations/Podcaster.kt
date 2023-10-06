@@ -17,4 +17,8 @@ class Podcaster(
     fun perform() {
         println("$name is currently hosting a podcast episode.")
     }
+
+    override fun toString(): String {
+        return "Podcaster(name='$name', debutDate='$debutDate', dob='$dob', topic='$topic')"
+    }
 }

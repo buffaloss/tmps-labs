@@ -14,4 +14,9 @@ class Band(
         println("Hello, we are $name, a $genre band from $country.")
         println("We have been activating in the music industry since $debutDate.")
     }
+
+    override fun toString(): String {
+        return "Band(name='$name', debutDate='$debutDate', genre='$genre', country='$country')"
+    }
+
 }

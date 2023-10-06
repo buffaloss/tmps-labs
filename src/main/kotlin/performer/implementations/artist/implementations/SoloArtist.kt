@@ -15,4 +15,8 @@ class SoloArtist(
         println("Hello, I am $name, a solo artist from $country.")
         println("I have been activating in the music industry since $debutDate.")
     }
+
+    override fun toString(): String {
+        return "SoloArtist(name='$name', debutDate='$debutDate', dob='$dob', genre='$genre', country='$country')"
+    }
 }

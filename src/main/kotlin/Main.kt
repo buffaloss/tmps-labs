@@ -1,26 +1,4 @@
 import java.util.Scanner
-import user_entity.singleton.UserEntitySingleton
-
-fun handleCommand(command: String) {
-    val parts = command.split(" ")
-    when (parts[0]) {
-        "login" -> {
-            val name = parts.getOrNull(1)
-            val dob = parts.getOrNull(2)
-            if (name != null && dob != null) {
-                UserEntitySingleton.loginUser(name, dob)
-                println("Logged in as $name")
-            } else {
-                println("Failed to log in")
-            }
-        }
-        "logout" -> {
-            UserEntitySingleton.logoutUser()
-            println("Logged out")
-        }
-        // other commands...
-    }
-}
 
 fun main() {
     val scanner = Scanner(System.`in`)
@@ -56,10 +34,14 @@ fun main() {
             PrototypeDemonstration()
         }
         4 -> {
-            println("―――――――――――――――――――――――――――――")
-            println("Factory Pattern Demonstration")
-            println("―――――――――――――――――――――――――――――")
-            // Implementation will be added later
+            println("――――――――――――――――――――――――――――――――――――――――")
+            println("Factory Pattern Demonstration: variant 1")
+            println("――――――――――――――――――――――――――――――――――――――――")
+            FactoryDemonstration1()
+            println("――――――――――――――――――――――――――――――――――――――――")
+            println("Factory Pattern Demonstration: variant 2")
+            println("――――――――――――――――――――――――――――――――――――――――")
+            FactoryDemonstration2()
         }
         else -> println("Invalid option. Please select a number between 1 and 4.")
     }
