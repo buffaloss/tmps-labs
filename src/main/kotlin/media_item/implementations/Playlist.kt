@@ -22,4 +22,12 @@ class Playlist(
             println(it.title)
         }
     }
+
+    override fun clone(): MediaItem {
+        return Playlist(title, creationDate, description, user)
+    }
+
+    override fun toString(): String {
+        return "Playlist(title='$title', creationDate='$creationDate', description='$description', user='$user')"
+    }
 }

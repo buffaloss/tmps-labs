@@ -5,5 +5,8 @@ interface MediaItem {
     val creationDate: String
 
     fun play()
+
     fun displayInfo()
+
+    fun clone(): MediaItem
 }

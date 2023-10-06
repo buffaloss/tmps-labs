@@ -4,7 +4,7 @@ import media_item.MediaItem
 class Podcast(
         override val title: String,
         override val creationDate: String,
-        val duration: Int,
+        val duration: Float,
         val podcaster: String
 ) : MediaItem {
     override fun play() {
@@ -15,5 +15,13 @@ class Podcast(
         println("Podcast: $title with $podcaster")
         println("Duration: $duration minutes")
         println("Release date: $creationDate")
+    }
+
+    override fun clone(): MediaItem {
+        return Podcast(title, creationDate, duration, podcaster)
+    }
+
+    override fun toString(): String {
+        return "Podcast(title='$title', creationDate='$creationDate', duration=$duration, podcaster='$podcaster')"
     }
 }

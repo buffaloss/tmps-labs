@@ -1,5 +1,6 @@
 package media_item.implementations
 import media_item.MediaItem
+import javax.print.attribute.standard.Media
 
 class Album(
         override val title: String,
@@ -25,5 +26,14 @@ class Album(
             println(it.title)
         }
     }
+
+    override fun clone(): MediaItem {
+        return Album(title, creationDate, artist, genre, noSongs)
+    }
+
+    override fun toString(): String {
+        return "Album(title='$title', creationDate='$creationDate', artist='$artist', genre='$genre', noSongs=$noSongs)"
+    }
 }
+
 

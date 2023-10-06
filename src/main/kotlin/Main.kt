@@ -29,8 +29,8 @@ fun main() {
     println("Please select an option:")
     println("1. Singleton")
     println("2. Builder")
-    println("3. Factory")
-    println("4. Prototype")
+    println("3. Prototype")
+    println("4. Factory")
 
     when (scanner.nextInt()) {
         1 -> {
@@ -50,15 +50,15 @@ fun main() {
             BuilderDemonstration()
         }
         3 -> {
-            println("―――――――――――――――――――――――――――――")
-            println("Factory Pattern Demonstration")
-            println("―――――――――――――――――――――――――――――")
-            // Implementation will be added later
-        }
-        4 -> {
             println("―――――――――――――――――――――――――――――――")
             println("Prototype Pattern Demonstration")
             println("―――――――――――――――――――――――――――――――")
+            PrototypeDemonstration()
+        }
+        4 -> {
+            println("―――――――――――――――――――――――――――――")
+            println("Factory Pattern Demonstration")
+            println("―――――――――――――――――――――――――――――")
             // Implementation will be added later
         }
         else -> println("Invalid option. Please select a number between 1 and 4.")
