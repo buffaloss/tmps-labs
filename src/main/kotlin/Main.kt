@@ -47,7 +47,7 @@ fun main() {
             println("―――――――――――――――――――――――――――――")
             println("Builder Pattern Demonstration")
             println("―――――――――――――――――――――――――――――")
-            // Implementation will be added later
+            BuilderDemonstration()
         }
         3 -> {
             println("―――――――――――――――――――――――――――――")
