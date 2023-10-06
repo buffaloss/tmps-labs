@@ -1,6 +1,5 @@
 package media_item.implementations
 import media_item.MediaItem
-import singleton.GlobalSearchIndex
 
 class Song(
         override val title: String,
@@ -8,9 +7,6 @@ class Song(
         val duration: Float,
         val artist: String
 ) : MediaItem {
-    init {
-        GlobalSearchIndex.index(this)
-    }
 
     override fun toString(): String {
         return "Song title: '$title', creationDate: '$creationDate', duration: $duration, artist: '$artist')"

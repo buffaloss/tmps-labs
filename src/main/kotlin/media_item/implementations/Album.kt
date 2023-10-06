@@ -1,6 +1,5 @@
 package media_item.implementations
 import media_item.MediaItem
-import singleton.GlobalSearchIndex
 
 class Album(
         override val title: String,
@@ -10,10 +9,6 @@ class Album(
         val noSongs: Int
 ) : MediaItem {
     val items = mutableListOf<MediaItem>()
-
-    init {
-        GlobalSearchIndex.index(this)
-    }
 
 
     override fun play() {
