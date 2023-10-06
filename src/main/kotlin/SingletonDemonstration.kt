@@ -4,14 +4,14 @@ import user_entity.singleton.UserEntitySingleton
 
 
 fun singletonDemonstration1() {
-    val song = Song("Song Title", "2022-03-01", 3.5f, "Artist Name")
-    ContentManagerSingleton.addContent(song)
+    val song1 = Song("Viva la Vida", "25-05-2008", 4.01f, "Coldplay")
+    ContentManagerSingleton.addContent(song1)
     println(ContentManagerSingleton.getAllContent())
 }
 
 fun singletonDemonstration2() {
     // Log in a user
-    UserEntitySingleton.loginUser("John Doe", "01-01-1990")
+    UserEntitySingleton.loginUser("John Doe", "01-04-1990")
     // Check if a user is logged in
     if (UserEntitySingleton.user != null) {
         println("User is logged in")

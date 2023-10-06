@@ -4,11 +4,11 @@ fun BuilderDemonstration() {
 
     // album builder demo
     val albumBuilder = AlbumBuilder()
-    albumBuilder.title = "My Album"
-    albumBuilder.creationDate = "2022-03-15"
-    albumBuilder.artist = "My Artist"
-    albumBuilder.genre = "My Genre"
-    albumBuilder.noSongs = 10
+    albumBuilder.title = "A Night at the Opera"
+    albumBuilder.creationDate = "1975-11-21"
+    albumBuilder.artist = "Queen"
+    albumBuilder.genre = "Rock"
+    albumBuilder.noSongs = 12
     val album = albumBuilder.build()
     println("\nAlbum Builder demonstration:")
     println("Album title: ${album.title}")
@@ -19,10 +19,10 @@ fun BuilderDemonstration() {
 
     // playlist builder demo
     val playlistBuilder = PlaylistBuilder()
-    playlistBuilder.title = "My Playlist"
-    playlistBuilder.creationDate = "2022-03-15"
-    playlistBuilder.description = "My Playlist Description"
-    playlistBuilder.user = "Janelle"
+    playlistBuilder.title = "Chill Vibes"
+    playlistBuilder.creationDate = "2021-07-12"
+    playlistBuilder.description = "A collection of relaxing songs to unwind."
+    playlistBuilder.user = "SpotifyUser123"
     val playlist = playlistBuilder.build()
     println("\nPlaylist Builder demonstration:")
     println("Playlist title: ${playlist.title}")
@@ -32,9 +32,9 @@ fun BuilderDemonstration() {
 
     // podcast builder demo
     val podcastBuilder = PodcastBuilder()
-    podcastBuilder.title = "My Podcast"
-    podcastBuilder.creationDate = "2022-03-15"
-    podcastBuilder.podcaster = "Harry Styles"
+    podcastBuilder.title = "The Daily"
+    podcastBuilder.creationDate = "2017-01-30"
+    podcastBuilder.podcaster = "Michael Barbaro"
     val podcast = podcastBuilder.build()
     println("\nPodcast Builder demonstration:")
     println("Podcast title: ${podcast.title}")
@@ -43,10 +43,10 @@ fun BuilderDemonstration() {
 
     // song builder demo
     val songBuilder = SongBuilder()
-    songBuilder.title = "My Song"
-    songBuilder.creationDate = "2022-03-15"
-    songBuilder.duration = 3.3f
-    songBuilder.artist = "Beatricia Golban"
+    songBuilder.title = "Bohemian Rhapsody"
+    songBuilder.creationDate = "1975-10-31"
+    songBuilder.duration = 5.55f
+    songBuilder.artist = "Queen"
     val song = songBuilder.build()
     println("\nSong Builder demonstration:")
     println("Song title: ${song.title}")

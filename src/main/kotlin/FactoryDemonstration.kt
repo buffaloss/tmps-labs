@@ -4,9 +4,9 @@ import performer.PerformerFactory
 fun FactoryDemonstration1() {
     val factory = PerformerFactory()
 
-    val podcaster = factory.createPodcaster("Podcaster Name", "Debut Date", "DOB", "Topic")
-    val band = factory.createBand("Band Name", "09-09-2009", "Metal Rock", "Moldova")
-    val soloArtist = factory.createSoloArtist("Solo Artist Name", "23-09-2023", "09-12-2002", "Pop", "Switzerland")
+    val podcaster = factory.createPodcaster("Joe Rogan", "2009-12-24", "1967-08-11", "Comedy, News")
+    val band = factory.createBand("Radiohead", "1985-10-01", "Alternative Rock", "UK")
+    val soloArtist = factory.createSoloArtist("Billie Eilish", "2016-11-18", "2001-12-18", "Pop", "USA")
 
     println(podcaster)
     println(band)
@@ -18,12 +18,11 @@ fun FactoryDemonstration2() {
     val factory = PerformerFactory()
 
     val descriptions = listOf(
-        PerformerDescription("Podcaster", "Podcaster Name", "Debut Date", "DOB", "Topic","null", "null", ),
-        PerformerDescription("Band", "Band Name", "debutdateee", "null", "null", "Australia", "Rock n Roll"),
-        PerformerDescription("SoloArtist", "Solo Artist Name", "debutDate", "09/02/1996", "null", "Romania", "Nightcore")
+        PerformerDescription("Podcaster", "Joe Rogan", "2009-12-24", "1967-08-11", "Comedy, News","null", "null"),
+        PerformerDescription("Band", "AC/DC", "1973-11-01", "null", "null", "Australia", "Hard Rock"),
+        PerformerDescription("SoloArtist", "Inna", "2008-10-12", "1986-10-16", "null", "Romania", "Dance-pop")
     )
 
     val performers = descriptions.map { factory.createPerformer(it) }
-
     performers.forEach { println(it) }
 }

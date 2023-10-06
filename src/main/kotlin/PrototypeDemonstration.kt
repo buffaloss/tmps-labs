@@ -5,10 +5,10 @@ import media_item.implementations.Song
 
 fun PrototypeDemonstration() {
     // Create an instance of each media item
-    val originalAlbum = Album("Album Title", "Creation Date", "Artist", "Genre", 10)
-    val originalPodcast = Podcast("Podcast Title", "Creation Date", 60.0f, "Podcaster")
-    val originalPlaylist = Playlist("Playlist Title", "Creation Date", "Description", "User")
-    val originalSong = Song("Song Title", "Creation Date", 3.5f, "Artist")
+    val originalAlbum = Album("Electra Heart", "2012-04-27", "Marina and the Diamonds", "Pop", 12)
+    val originalPodcast = Podcast("Tiny Desk Concerts - Audio", "2008-12-05", 15.0f, "NPR")
+    val originalPlaylist = Playlist("Best of BTS", "2021-12-31", "A collection of the best songs from BTS.", "Spotify")
+    val originalSong = Song("Sweater Weather", "2012-03-05", 4.0f, "The Neighbourhood")
 
     // Clone each media item
     val clonedAlbum = originalAlbum.clone()
