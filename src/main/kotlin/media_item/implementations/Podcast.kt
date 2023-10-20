@@ -6,7 +6,7 @@ class Podcast(
         override val creationDate: String,
         val duration: Float,
         val podcaster: String
-) : MediaItem {
+) : MediaItem() {
     override fun play() {
         println("Playing the podcast: $title with $podcaster")
     }
@@ -17,7 +17,7 @@ class Podcast(
         println("Release date: $creationDate")
     }
 
-    override fun clone(): MediaItem {
+    override fun clone(): Podcast {
         return Podcast(title, creationDate, duration, podcaster)
     }
 

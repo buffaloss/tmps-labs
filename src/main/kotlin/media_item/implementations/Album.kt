@@ -8,9 +8,8 @@ class Album(
         val artist: String,
         val genre: String,
         val noSongs: Int
-) : MediaItem {
+) : MediaItem() {
     val items = mutableListOf<MediaItem>()
-
 
     override fun play() {
         println("Playing the album: $title by $artist")
@@ -27,7 +26,7 @@ class Album(
         }
     }
 
-    override fun clone(): MediaItem {
+    override fun clone(): Album {
         return Album(title, creationDate, artist, genre, noSongs)
     }
 

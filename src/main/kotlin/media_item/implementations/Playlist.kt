@@ -6,7 +6,7 @@ class Playlist(
         override val creationDate: String,
         val description: String,
         val user: String
-) : MediaItem {
+) : MediaItem() {
     val items = mutableListOf<MediaItem>()
 
     override fun play() {
@@ -23,7 +23,7 @@ class Playlist(
         }
     }
 
-    override fun clone(): MediaItem {
+    override fun clone(): Playlist {
         return Playlist(title, creationDate, description, user)
     }
 

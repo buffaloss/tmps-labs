@@ -1,12 +1,14 @@
 package media_item
 
-interface MediaItem {
-    val title: String
-    val creationDate: String
+abstract class MediaItem: Cloneable {
+    abstract val title: String
+    abstract val creationDate: String
 
-    fun play()
+    abstract fun play()
 
-    fun displayInfo()
+    abstract fun displayInfo()
 
-    fun clone(): MediaItem
+    public override fun clone(): Any {
+        return super.clone()
+    }
 }
