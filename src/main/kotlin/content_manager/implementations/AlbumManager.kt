@@ -20,3 +20,4 @@ class AlbumManager(override val name: String) : ContentManager {
         albums.forEach { it.displayInfo() }
     }
 }
+
