@@ -9,7 +9,7 @@ fun main() {
         println("Please select an option:")
         println("1. Facade")
         println("2. Adapter")
-        println("3. Composite")
+        println("3. Bridge")
         println("4. Proxy")
         println("5. Exit")
 
@@ -30,10 +30,10 @@ fun main() {
             }
 
             3 -> {
-                println("―――――――――――――――――――――――――――――――")
-                println("Composite Pattern Demonstration")
-                println("―――――――――――――――――――――――――――――――")
-//              here goes the demonstration, if needed
+                println("―――――――――――――――――――――――――――")
+                println("Bride Pattern Demonstration")
+                println("―――――――――――――――――――――――――――")
+                bridgeDemonstration()
             }
 
             4 -> {

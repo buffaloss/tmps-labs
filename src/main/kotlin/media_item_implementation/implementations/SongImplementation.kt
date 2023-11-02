@@ -1,16 +1,18 @@
-package media_item.implementations
+package media_item_implementation.implementations
+
 import media_item.MediaItem
 import media_item_implementation.MediaItemImplementation
-import media_item_implementation.implementations.SongImplementation
 
+class SongImplementation(
+    override val title: String,
+    override val creationDate: String,
+    val duration: Float,
+    val artist: String
+) : MediaItemImplementation {
 
-class Song(
-        override val title: String,
-        override val creationDate: String,
-        val duration: Float,
-        val artist: String,
-        override val implementation: SongImplementation // Directly initialize the property here
-) : MediaItem() {
+    override fun play() {
+        println("Playing the song: $title by $artist")
+    }
 
     override fun displayInfo() {
         println("Song: $title by $artist")

@@ -1,16 +1,19 @@
-package media_item.implementations
+package media_item_implementation.implementations
+
 import media_item.MediaItem
 import media_item_implementation.MediaItemImplementation
-import media_item_implementation.implementations.PlaylistImplementation
 
-class Playlist(
-        override val title: String,
-        override val creationDate: String,
-        val description: String,
-        val user: String,
-        override val implementation: PlaylistImplementation
-) : MediaItem() {
+class PlaylistImplementation(
+    override val title: String,
+    override val creationDate: String,
+    val description: String,
+    val user: String
+) : MediaItemImplementation {
     val items = mutableListOf<MediaItem>()
+
+    override fun play() {
+        println("Playlist $title is currently playing...")
+    }
 
     override fun displayInfo() {
         println("Playlist title: $title created by $user")

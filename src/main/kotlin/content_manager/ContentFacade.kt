@@ -9,6 +9,8 @@ import media_item.MediaItem
 import media_item.implementations.Album
 import media_item.implementations.Playlist
 import media_item.implementations.Song
+import media_item_implementation.implementations.AlbumImplementation
+import media_item_implementation.implementations.PlaylistImplementation
 import user_entity.UserEntity
 
 class ContentFacade : Facade {
@@ -18,7 +20,7 @@ class ContentFacade : Facade {
     private val individualPlaylistManager = IndividualPlaylistManager("Individual Playlist Manager")
 
     override fun produceAlbum(title: String, creationDate: String, artist: String, genre: String, noSongs: Int, songs: List<Song>): Album {
-        val album = Album(title, creationDate, artist, genre, noSongs)
+        val album = Album(title, creationDate, artist, genre, noSongs, AlbumImplementation(title, creationDate, artist, genre, noSongs))
         individualAlbumManager.setIndividualAlbum(album)
         songs.forEach { individualAlbumManager.addItem(it) }
         albumManager.addItem(album)
@@ -26,7 +28,7 @@ class ContentFacade : Facade {
     }
 
     override fun producePlaylist(title: String, creationDate: String, description: String, user: String, mediaItems: List<MediaItem>): Playlist {
-        val playlist = Playlist(title, creationDate, description, user)
+        val playlist = Playlist(title, creationDate, description, user, PlaylistImplementation(title, creationDate, description, user))
         individualPlaylistManager.setIndividualPlaylist(playlist)
         mediaItems.forEach { individualPlaylistManager.addItem(it) }
         playlistManager.addItem(playlist)
