@@ -26,7 +26,7 @@ fun main() {
                 println("―――――――――――――――――――――――――――――")
                 println("Adapter Pattern Demonstration")
                 println("―――――――――――――――――――――――――――――")
-//              here goes the demonstration, if needed
+                adapterDemonstration()
             }
 
             3 -> {
@@ -40,7 +40,7 @@ fun main() {
                 println("―――――――――――――――――――――――――――")
                 println("Proxy Pattern Demonstration")
                 println("―――――――――――――――――――――――――――")
-//              here goes the demonstration, if needed
+                proxyDemonstration()
             }
 
             5 -> {
