@@ -1,3 +1,5 @@
+import menu.RegularMenu
+import menu.SeasonalMenu
 import staff.Cook
 import staff.Waitress
 import java.util.Scanner
@@ -10,7 +12,7 @@ fun main() {
         println("Welcome to the Behavioral Design Patterns Demonstration!")
         println("Please select an option:")
         println("1. Observer")
-        println("2. ")
+        println("2. Iterator")
         println("3. ")
         println("4. Exit")
 
@@ -41,9 +43,18 @@ fun main() {
             }
 
             2 -> {
-                println("―――――――――――――――――――――――――――――")
-                println(" Pattern Demonstration")
-                println("―――――――――――――――――――――――――――――")
+                println("――――――――――――――――――――――――――――――")
+                println("Iterator Pattern Demonstration")
+                println("――――――――――――――――――――――――――――――")
+                // Create regular and seasonal menus
+                val regularMenu = RegularMenu()
+                val seasonalMenu = SeasonalMenu()
+
+                // Create a waitress
+                val waitress = Waitress("Alice", regularMenu, seasonalMenu)
+
+                // Print the menus
+                waitress.printMenu()
             }
 
             3 -> {
