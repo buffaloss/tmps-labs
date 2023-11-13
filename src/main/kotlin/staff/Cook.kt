@@ -10,5 +10,8 @@ class Cook {
 
     private fun cook(item: String) {
         println("Cooking $item...")
+        // Simulate the time it takes to prepare the food
+        Thread.sleep(2000)
+        println("The $item is ready!")
     }
 }

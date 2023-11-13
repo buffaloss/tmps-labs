@@ -1,5 +1,6 @@
 import menu.RegularMenu
 import menu.SeasonalMenu
+import order.Order
 import staff.Cook
 import staff.Waitress
 import java.util.Scanner
@@ -13,7 +14,7 @@ fun main() {
         println("Please select an option:")
         println("1. Observer")
         println("2. Iterator")
-        println("3. ")
+        println("3. Command")
         println("4. Exit")
 
         when (scanner.nextInt()) {
@@ -58,9 +59,34 @@ fun main() {
             }
 
             3 -> {
-                println("―――――――――――――――――――――――――――")
-                println(" Pattern Demonstration")
-                println("―――――――――――――――――――――――――――")
+                println("―――――――――――――――――――――――――――――")
+                println("Command Pattern Demonstration")
+                println("―――――――――――――――――――――――――――――")
+                // Create a chef
+                val cook = Cook()
+
+                // Create orders
+                val order1 = Order(cook, "Pizza")
+                val order2 = Order(cook, "Burger")
+                val order3 = Order(cook, "Pasta")
+
+                // Create a waitress
+                val waitress = Waitress("Alice")
+
+                // The waitress takes the first order and posts it
+                waitress.takeOrder(order1)
+                waitress.orderUp()
+
+                // The waitress takes the second order and posts it
+                waitress.takeOrder(order2)
+                waitress.orderUp()
+
+                // Oops, the second order was a mistake. Undo it.
+                waitress.undoOrder()
+
+                // The waitress takes the third order and posts it
+                waitress.takeOrder(order3)
+                waitress.orderUp()
             }
 
             4 -> {
